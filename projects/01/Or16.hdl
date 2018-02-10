@@ -13,5 +13,52 @@ CHIP Or16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    Nand(a=a[0], b=true, out=anand0);
+    Nand(a=b[0], b=true, out=bnand0);
+    Nand(a=anand0, b=bnand0, out=out[0]);
+    Nand(a=a[1], b=true, out=anand1);
+    Nand(a=b[1], b=true, out=bnand1);
+    Nand(a=anand1, b=bnand1, out=out[1]);
+    Nand(a=a[2], b=true, out=anand2);
+    Nand(a=b[2], b=true, out=bnand2);
+    Nand(a=anand2, b=bnand2, out=out[2]);
+    Nand(a=a[3], b=true, out=anand3);
+    Nand(a=b[3], b=true, out=bnand3);
+    Nand(a=anand3, b=bnand3, out=out[3]);
+    Nand(a=a[4], b=true, out=anand4);
+    Nand(a=b[4], b=true, out=bnand4);
+    Nand(a=anand4, b=bnand4, out=out[4]);
+    Nand(a=a[5], b=true, out=anand5);
+    Nand(a=b[5], b=true, out=bnand5);
+    Nand(a=anand5, b=bnand5, out=out[5]);
+    Nand(a=a[6], b=true, out=anand6);
+    Nand(a=b[6], b=true, out=bnand6);
+    Nand(a=anand6, b=bnand6, out=out[6]);
+    Nand(a=a[7], b=true, out=anand7);
+    Nand(a=b[7], b=true, out=bnand7);
+    Nand(a=anand7, b=bnand7, out=out[7]);
+    Nand(a=a[8], b=true, out=anand8);
+    Nand(a=b[8], b=true, out=bnand8);
+    Nand(a=anand8, b=bnand8, out=out[8]);
+    Nand(a=a[9], b=true, out=anand9);
+    Nand(a=b[9], b=true, out=bnand9);
+    Nand(a=anand9, b=bnand9, out=out[9]);
+    Nand(a=a[10], b=true, out=anand10);
+    Nand(a=b[10], b=true, out=bnand10);
+    Nand(a=anand10, b=bnand10, out=out[10]);
+    Nand(a=a[11], b=true, out=anand11);
+    Nand(a=b[11], b=true, out=bnand11);
+    Nand(a=anand11, b=bnand11, out=out[11]);
+    Nand(a=a[12], b=true, out=anand12);
+    Nand(a=b[12], b=true, out=bnand12);
+    Nand(a=anand12, b=bnand12, out=out[12]);
+    Nand(a=a[13], b=true, out=anand13);
+    Nand(a=b[13], b=true, out=bnand13);
+    Nand(a=anand13, b=bnand13, out=out[13]);
+    Nand(a=a[14], b=true, out=anand14);
+    Nand(a=b[14], b=true, out=bnand14);
+    Nand(a=anand14, b=bnand14, out=out[14]);
+    Nand(a=a[15], b=true, out=anand15);
+    Nand(a=b[15], b=true, out=bnand15);
+    Nand(a=anand15, b=bnand15, out=out[15]);
 }

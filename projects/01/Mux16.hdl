@@ -4,8 +4,8 @@
 // File name: projects/01/Mux16.hdl
 
 /**
- * 16-bit multiplexor: 
- * for i = 0..15 out[i] = a[i] if sel == 0 
+ * 16-bit multiplexor:
+ * for i = 0..15 out[i] = a[i] if sel == 0
  *                        b[i] if sel == 1
  */
 
@@ -14,5 +14,214 @@ CHIP Mux16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    //Not(a=sel, out=notsel)
+    Nand(a=sel, b=true, out=notsel);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[0], b=notsel, out=nanda0);
+    Nand(a=nanda0, b=true, out=anda0);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[0], b=sel, out=nandb0);
+    Nand(a=nandb0, b=true, out=andb0);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda0, b=true, out=ora0);
+    Nand(a=andb0, b=true, out=orb0);
+    Nand(a=ora0, b=orb0, out=out[0]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[1], b=notsel, out=nanda1);
+    Nand(a=nanda1, b=true, out=anda1);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[1], b=sel, out=nandb1);
+    Nand(a=nandb1, b=true, out=andb1);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda1, b=true, out=ora1);
+    Nand(a=andb1, b=true, out=orb1);
+    Nand(a=ora1, b=orb1, out=out[1]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[2], b=notsel, out=nanda2);
+    Nand(a=nanda2, b=true, out=anda2);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[2], b=sel, out=nandb2);
+    Nand(a=nandb2, b=true, out=andb2);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda2, b=true, out=ora2);
+    Nand(a=andb2, b=true, out=orb2);
+    Nand(a=ora2, b=orb2, out=out[2]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[3], b=notsel, out=nanda3);
+    Nand(a=nanda3, b=true, out=anda3);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[3], b=sel, out=nandb3);
+    Nand(a=nandb3, b=true, out=andb3);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda3, b=true, out=ora3);
+    Nand(a=andb3, b=true, out=orb3);
+    Nand(a=ora3, b=orb3, out=out[3]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[4], b=notsel, out=nanda4);
+    Nand(a=nanda4, b=true, out=anda4);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[4], b=sel, out=nandb4);
+    Nand(a=nandb4, b=true, out=andb4);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda4, b=true, out=ora4);
+    Nand(a=andb4, b=true, out=orb4);
+    Nand(a=ora4, b=orb4, out=out[4]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[5], b=notsel, out=nanda5);
+    Nand(a=nanda5, b=true, out=anda5);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[5], b=sel, out=nandb5);
+    Nand(a=nandb5, b=true, out=andb5);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda5, b=true, out=ora5);
+    Nand(a=andb5, b=true, out=orb5);
+    Nand(a=ora5, b=orb5, out=out[5]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[6], b=notsel, out=nanda6);
+    Nand(a=nanda6, b=true, out=anda6);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[6], b=sel, out=nandb6);
+    Nand(a=nandb6, b=true, out=andb6);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda6, b=true, out=ora6);
+    Nand(a=andb6, b=true, out=orb6);
+    Nand(a=ora6, b=orb6, out=out[6]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[7], b=notsel, out=nanda7);
+    Nand(a=nanda7, b=true, out=anda7);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[7], b=sel, out=nandb7);
+    Nand(a=nandb7, b=true, out=andb7);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda7, b=true, out=ora7);
+    Nand(a=andb7, b=true, out=orb7);
+    Nand(a=ora7, b=orb7, out=out[7]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[8], b=notsel, out=nanda8);
+    Nand(a=nanda8, b=true, out=anda8);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[8], b=sel, out=nandb8);
+    Nand(a=nandb8, b=true, out=andb8);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda8, b=true, out=ora8);
+    Nand(a=andb8, b=true, out=orb8);
+    Nand(a=ora8, b=orb8, out=out[8]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[9], b=notsel, out=nanda9);
+    Nand(a=nanda9, b=true, out=anda9);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[9], b=sel, out=nandb9);
+    Nand(a=nandb9, b=true, out=andb9);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda9, b=true, out=ora9);
+    Nand(a=andb9, b=true, out=orb9);
+    Nand(a=ora9, b=orb9, out=out[9]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[10], b=notsel, out=nanda10);
+    Nand(a=nanda10, b=true, out=anda10);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[10], b=sel, out=nandb10);
+    Nand(a=nandb10, b=true, out=andb10);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda10, b=true, out=ora10);
+    Nand(a=andb10, b=true, out=orb10);
+    Nand(a=ora10, b=orb10, out=out[10]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[11], b=notsel, out=nanda11);
+    Nand(a=nanda11, b=true, out=anda11);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[11], b=sel, out=nandb11);
+    Nand(a=nandb11, b=true, out=andb11);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda11, b=true, out=ora11);
+    Nand(a=andb11, b=true, out=orb11);
+    Nand(a=ora11, b=orb11, out=out[11]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[12], b=notsel, out=nanda12);
+    Nand(a=nanda12, b=true, out=anda12);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[12], b=sel, out=nandb12);
+    Nand(a=nandb12, b=true, out=andb12);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda12, b=true, out=ora12);
+    Nand(a=andb12, b=true, out=orb12);
+    Nand(a=ora12, b=orb12, out=out[12]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[13], b=notsel, out=nanda13);
+    Nand(a=nanda13, b=true, out=anda13);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[13], b=sel, out=nandb13);
+    Nand(a=nandb13, b=true, out=andb13);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda13, b=true, out=ora13);
+    Nand(a=andb13, b=true, out=orb13);
+    Nand(a=ora13, b=orb13, out=out[13]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[14], b=notsel, out=nanda14);
+    Nand(a=nanda14, b=true, out=anda14);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[14], b=sel, out=nandb14);
+    Nand(a=nandb14, b=true, out=andb14);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda14, b=true, out=ora14);
+    Nand(a=andb14, b=true, out=orb14);
+    Nand(a=ora14, b=orb14, out=out[14]);
+
+    //And(a=a, b=notsel, out=anda)
+    Nand(a=a[15], b=notsel, out=nanda15);
+    Nand(a=nanda15, b=true, out=anda15);
+
+    //And(a=b, b=sel, out=andb)
+    Nand(a=b[15], b=sel, out=nandb15);
+    Nand(a=nandb15, b=true, out=andb15);
+
+    //Or(a=anda, b=andb, out=out)
+    Nand(a=anda15, b=true, out=ora15);
+    Nand(a=andb15, b=true, out=orb15);
+    Nand(a=ora15, b=orb15, out=out[15]);
 }
